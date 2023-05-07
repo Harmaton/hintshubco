@@ -20,6 +20,7 @@ import {
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
+
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
     px={2}
@@ -77,7 +78,7 @@ export default function Nav() {
                   </Center>
                   <br />
                   <MenuDivider />
-                  <MenuItem>About Us  </MenuItem>
+                  <MenuItem> <Link href={"/aboutus"}>About Us</Link> </MenuItem>
                   <MenuDivider />
                   <MenuItem>Donate </MenuItem>  
                 </MenuList>
