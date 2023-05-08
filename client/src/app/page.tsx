@@ -23,7 +23,9 @@ export default function Home() {
     <Testimonials />
     <Contact />
     <Newsletter />
-    <Whatsapp  />
+
+    
+
     <Footer />
     </>
   )
