@@ -34,8 +34,8 @@ export default function Newsletter() {
     boxShadow={'xl'}
     rounded={'lg'}
     p={6}
-    mt={1.25} // Updated value
-    direction={'column'}>
+    mt={1.25}
+    >
 
     <Heading
       as={'h2'}
