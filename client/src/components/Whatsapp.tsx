@@ -8,7 +8,7 @@ function Whatsapp(props: { phoneNumber: string, onClick: () => void  }) {
     <IconButton
       icon={<FaWhatsapp  />}
       size="lg"
-      aria-label='Search database'
+      aria-label='Whatsapp'
       isRound
       bg="green.500"
       color="white"

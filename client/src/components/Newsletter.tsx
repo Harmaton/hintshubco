@@ -22,11 +22,12 @@ export default function Newsletter() {
   const [error, setError] = useState(false);
 
   return (
-    <Flex
+  <Flex
   minH={'30vh'}
   align={'center'}
   justify={'center'}
   bg={useColorModeValue('gray.50', 'gray.800')}>
+
   <Container
     maxW={'lg'}
     bg={useColorModeValue('white', 'whiteAlpha.100')}
@@ -35,6 +36,7 @@ export default function Newsletter() {
     p={6}
     mt={1.25} // Updated value
     direction={'column'}>
+
     <Heading
       as={'h2'}
       fontSize={{ base: 'xl', sm: '2xl' }}
@@ -42,6 +44,7 @@ export default function Newsletter() {
       mb={5}>
       Subscribe to our Newsletter
     </Heading>
+    
     <Stack
       direction={{ base: 'column', md: 'row' }}
       as={'form'}
@@ -62,6 +65,8 @@ export default function Newsletter() {
           setState('success');
         }, 1000);
       }}>
+
+
       <FormControl>
         <Input
           variant={'solid'}

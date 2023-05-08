@@ -45,9 +45,9 @@ import {
           What is our company doing?
         </chakra.h1>
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
-          <StatsCard title={'We serve'} stat={'50,000 people'} />
-          <StatsCard title={'In'} stat={'30 different countries'} />
-          <StatsCard title={'Who speak'} stat={'100 different languages'} />
+          <StatsCard title={'We Deliver'} stat={'Over 50 Products a day'} />
+          <StatsCard title={'In'} stat={'5 different counties'} />
+          <StatsCard title={'Who speak'} stat={'10 different languages'} />
         </SimpleGrid>
       </Box>
     );

@@ -31,7 +31,7 @@ import {
   export default function contact() {
     return (
       <Container  bgImage={
-        'https://images.unsplash.com/photo-1527689368864-3a821dbccc34?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+        '/lasteng.jpeg'
       } maxW="full" mt={0} centerContent overflow="hidden">
         <Flex>
           <Box
@@ -58,7 +58,7 @@ import {
                           color="#DCE2FF"
                           _hover={{ border: '2px solid #1C6FEB' }}
                           leftIcon={<MdPhone color="#1970F1" size="20px" />}>
-                          +91-988888888
+                          +254-988888888
                         </Button>
                         <Button
                           size="md"
@@ -68,7 +68,7 @@ import {
                           color="#DCE2FF"
                           _hover={{ border: '2px solid #1C6FEB' }}
                           leftIcon={<MdEmail color="#1970F1" size="20px" />}>
-                          hello@abc.com
+                          hintshubcompanies@gmail.com
                         </Button>
                         <Button
                           size="md"
@@ -78,7 +78,7 @@ import {
                           color="#DCE2FF"
                           _hover={{ border: '2px solid #1C6FEB' }}
                           leftIcon={<MdLocationOn color="#1970F1" size="20px" />}>
-                          Karnavati, India
+                          Makutano, Meru
                         </Button>
                       </VStack>
                     </Box>
@@ -150,7 +150,7 @@ import {
                         </FormControl>
                         <FormControl id="name" float="right">
                           <Button
-                            variant="solid"
+                            variant="outline"
                             bg="#0D74FF"
                             color="white"
                             _hover={{}}>

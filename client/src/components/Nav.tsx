@@ -60,8 +60,8 @@ export default function Nav() {
                   cursor={'pointer'}
                   minW={0}>
                   <Avatar
-                    size={'sm'}
-                    src={'https://avatars.dicebear.com/api/male/username.svg'}
+                    size={'md'}
+                    src={'/hintslogo.jpg'}
                   />
                 </MenuButton>
                 <MenuList alignItems={'center'}>
