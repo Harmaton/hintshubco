@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client"
 
 import { Accordion,Heading , AccordionItem,Box, AccordionButton, AccordionPanel, AccordionIcon } from "@chakra-ui/react"
@@ -9,7 +10,9 @@ function FAQAccordion() {
       as={'h2'}
       fontSize={{ base: 'xl', sm: '2xl' }}
       textAlign={'center'}
+      // eslint-disable-next-line react/no-unescaped-entities
       mb={5}>
+      
       FAQ's
     </Heading>
     <Accordion allowMultiple rounded="md">

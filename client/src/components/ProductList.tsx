@@ -43,13 +43,12 @@ import {
           {products.map((product) => (
             <Flex
               key={product.id}
-              bg={useColorModeValue('gray.100', 'gray.700')}
+              bg={'gray.400'}
               p={4}
               borderRadius="md"
               alignItems="center"
               cursor="pointer"
               transition="all 0.2s"
-              _hover={{ bg: useColorModeValue('gray.200', 'gray.600') }}
               onClick={() => console.log(`Product ${product.id} clicked!`)}
               >
               <Image src={product.image} alt={product.name} boxSize="180px" objectFit="contain" mr={4} />

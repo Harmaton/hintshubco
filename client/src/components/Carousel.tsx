@@ -115,7 +115,7 @@ export default function Carousel() {
         <BiRightArrowAlt size="40px" />
       </IconButton>
       {/* Slider */}
-      <Slider {...settings} ref={(slider) => setSlider(slider)}>
+      <Slider {...settings} ref={(slider: any) => setSlider(slider)}>
         {cards.map((card, index) => (
           <Box
             key={index}

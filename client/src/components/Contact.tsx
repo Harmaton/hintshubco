@@ -123,6 +123,7 @@ import {
                           <InputGroup borderColor="#E0E1E7">
                             <InputLeftElement
                               pointerEvents="none"
+                              // eslint-disable-next-line react/no-children-prop
                               children={<BsPerson color="gray.800" />}
                             />
                             <Input type="text" size="md" />
@@ -133,6 +134,7 @@ import {
                           <InputGroup borderColor="#E0E1E7">
                             <InputLeftElement
                               pointerEvents="none"
+                              // eslint-disable-next-line react/no-children-prop
                               children={<MdOutlineEmail color="gray.800" />}
                             />
                             <Input type="text" size="md" />
