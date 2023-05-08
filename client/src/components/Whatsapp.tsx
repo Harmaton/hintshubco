@@ -3,7 +3,7 @@
 import { IconButton } from "@chakra-ui/react";
 import { FaWhatsapp } from "react-icons/fa";
 
-function Whatsapp(props: { phoneNumber: string, onClick: () => void  }) {
+function Whatsapp() {
   return (
     <IconButton
       icon={<FaWhatsapp  />}
@@ -16,7 +16,7 @@ function Whatsapp(props: { phoneNumber: string, onClick: () => void  }) {
       bottom="6"
       right="6"
       zIndex="docked"
-      onClick={props.onClick}
+     
     />
   );
 }
