@@ -61,6 +61,15 @@ import {
             </Flex>
           ))}
         </Stack>
+        <Text
+        fontSize={'lg'}
+        fontFamily={'Caveat'}
+        position={'absolute'}
+        right={'-125px'}
+        top={'-15px'}
+        transform={'rotate(10deg)'}>
+        Starting at $15/mo
+      </Text>
       </Box>
     );
   };

@@ -10,6 +10,7 @@ import Newsletter from '../components/Newsletter'
 import Whatsapp from '../components/Whatsapp'
 import FAQAccordion from '../components/FAQAccordion'
 import ProductList from '../components/ProductList'
+import About from '../components/About'
 
 export default function Home() {
   return (
@@ -18,14 +19,13 @@ export default function Home() {
     <Hero />
     <ProductList />
     <Carousel />
+    <About />
     <Statistics />
     <FAQAccordion />
     <Testimonials />
     <Contact />
     <Newsletter />
-
     <Whatsapp />
-
     <Footer />
     </>
   )

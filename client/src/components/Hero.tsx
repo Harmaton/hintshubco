@@ -34,11 +34,11 @@ import {
                 bg: 'blue.400',
                 zIndex: -1,
               }}>
-              We Deliver
+              Hints Hub Companies
             </Text>
             <br />{' '}
             <Text color={'blue.400'} as={'span'}>
-              Goods and Services
+              We Deliver 🔥 
             </Text>{' '}
           </Heading>
           <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
@@ -55,6 +55,7 @@ import {
               }}>
              Schedule a Delivery
             </Button>
+            
             <Button rounded={'full'}>Track your Delivery</Button>
           </Stack>
         </Stack>
