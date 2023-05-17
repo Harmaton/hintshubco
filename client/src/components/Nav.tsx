@@ -43,7 +43,7 @@ export default function Nav() {
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
         <Box fontFamily="Arial" fontSize="30px" fontStyle="italic">
-        Hints Hub Co.
+        Hints Hub ltd.
       </Box>
 
           <Flex alignItems={'center'}>
@@ -78,9 +78,9 @@ export default function Nav() {
                   </Center>
                   <br />
                   <MenuDivider />
-                  <MenuItem> <Link href={"/aboutus"}>About Us</Link> </MenuItem>
+                  <MenuItem> <Link href={"/aboutus"}>Hire Us</Link> </MenuItem>
                   <MenuDivider />
-                  <MenuItem>Donate </MenuItem>  
+                  <MenuItem>Support Us</MenuItem>  
                 </MenuList>
               </Menu>
             </Stack>

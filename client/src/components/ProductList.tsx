@@ -8,7 +8,6 @@ import {
     Button,
     Stack,
     Heading,
-    useColorModeValue,
   } from '@chakra-ui/react';
   
   const ProductList = () => {
@@ -37,7 +36,7 @@ import {
     ];
   
     return (
-      <Box p={4}>
+      <Box>
         <Heading mb={6}>Our Products</Heading>
         <Stack spacing={4}>
           {products.map((product) => (
