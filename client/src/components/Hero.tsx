@@ -8,14 +8,41 @@ import {
     Image,
     Stack,
     Text,
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalCloseButton,
+    ModalBody,
+    ModalFooter,
+    FormControl,
+    FormLabel,
     VStack,
     Box,
     Input,
     useBreakpointValue,
+    useDisclosure
+    
+    
   } from '@chakra-ui/react';
+  import {useState} from 'react'
   
 
   export default function Hero() {
+    const [deliveryRequest, setDeliveryRequest] = useState('');
+
+    const { isOpen, onOpen, onClose } = useDisclosure();
+
+    const handleSubmit = () => {
+      // Perform any necessary actions with the deliveryRequest value
+      console.log('Delivery Request:', deliveryRequest);
+    
+      // Close the modal
+      onClose();
+    };
+    
+
+
     return (
       <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
       <Flex p={8} flex={1} align={'center'} justify={'center'}>
@@ -52,11 +79,20 @@ import {
               color={'white'}
               _hover={{
                 bg: 'blue.500',
-              }}>
+              }}
+              onClick={onOpen}
+              >
              Schedule a Delivery
             </Button>
             
-            <Button rounded={'full'}>Track your Delivery</Button>
+            <Button rounded={'full'}
+             bg={'yellow.400'}
+             color={'white'}
+             _hover={{
+               bg: 'blue.100',
+             }}
+             onClick={onOpen}
+            >Track your Delivery</Button>
           </Stack>
         </Stack>
       </Flex>
@@ -69,6 +105,41 @@ import {
           }
         />
       </Flex>
+          {/* Modal form */}
+    <Modal isOpen={isOpen} onClose={onClose}>
+      <ModalOverlay />
+      <ModalContent>
+        <ModalHeader>Schedule a Delivery</ModalHeader>
+        <ModalCloseButton />
+        <ModalBody>
+          <FormControl>
+            <FormLabel>Delivery Request</FormLabel>
+            <Input
+              type="text"
+              value={deliveryRequest}
+              onChange={(e) => setDeliveryRequest(e.target.value)}
+              placeholder="Enter your delivery request"
+            />
+            
+            <Input
+              type="text"
+              value={deliveryRequest}
+              onChange={(e) => setDeliveryRequest(e.target.value)}
+              placeholder="Enter your delivery request"
+            />
+          </FormControl>
+        </ModalBody>
+        <ModalFooter>
+          <Button colorScheme="blue" mr={3} onClick={handleSubmit}>
+            Send
+          </Button>
+          <Button variant="ghost" onClick={onClose}>
+            Cancel
+          </Button>
+        </ModalFooter>
+        </ModalContent>
+      </Modal>
+      
     </Stack>
     );
   }
