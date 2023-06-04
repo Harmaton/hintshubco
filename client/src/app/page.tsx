@@ -11,6 +11,7 @@ import Whatsapp from '../components/Whatsapp'
 import FAQAccordion from '../components/FAQAccordion'
 import ProductList from '../components/ProductList'
 import About from '../components/About'
+import Support from '../components/Support'
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
     <Contact />
     <Newsletter />
     <Whatsapp />
+    <Support />
     <Footer />
     </>
   )

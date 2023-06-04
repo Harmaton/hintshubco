@@ -80,7 +80,9 @@ export default function Nav() {
                   <MenuDivider />
                   <MenuItem> <Link href={"/aboutus"}>Hire Us</Link> </MenuItem>
                   <MenuDivider />
-                  <MenuItem>Support Us</MenuItem>  
+                  <MenuItem>Contact Us</MenuItem>  
+                  <MenuDivider />
+                  <MenuItem>Support Us</MenuItem> 
                 </MenuList>
               </Menu>
             </Stack>

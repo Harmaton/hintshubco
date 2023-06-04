@@ -32,10 +32,10 @@ import {
     return (
       <Container  bgImage={
         '/lasteng.jpeg'
-      } maxW="full" mt={0} centerContent overflow="hidden">
+      } maxW="full" mt={0} p={4} centerContent overflow="hidden">
         <Flex>
           <Box
-            bg="#02054B"
+            bg="#022a4b"
             color="white"
             borderRadius="lg"
             m={{ sm: 4, md: 16, lg: 10 }}
@@ -58,17 +58,17 @@ import {
                           color="#DCE2FF"
                           _hover={{ border: '2px solid #1C6FEB' }}
                           leftIcon={<MdPhone color="#1970F1" size="20px" />}>
-                          +254-988888888
+                          +2547-84372162
                         </Button>
                         <Button
-                          size="md"
+                          size="sm"
                           height="48px"
-                          width="200px"
+                          width="280px"
                           variant="ghost"
                           color="#DCE2FF"
                           _hover={{ border: '2px solid #1C6FEB' }}
                           leftIcon={<MdEmail color="#1970F1" size="20px" />}>
-                          hintshubcompanies@gmail.com
+                          hintshubcompanieltd@gmail.com
                         </Button>
                         <Button
                           size="md"

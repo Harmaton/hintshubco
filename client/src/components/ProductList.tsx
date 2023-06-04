@@ -9,6 +9,8 @@ import {
     Stack,
     Heading,
   } from '@chakra-ui/react';
+  import Link from 'next/link';
+
   
   const ProductList = () => {
     const products = [
@@ -40,6 +42,7 @@ import {
         <Heading mb={6}>Our Products</Heading>
         <Stack spacing={4}>
           {products.map((product) => (
+            <Link  key={product.id} href={`/products/${product.id}`}>
             <Flex
               key={product.id}
               bg={'gray.400'}
@@ -58,6 +61,7 @@ import {
               <Box flex={1} />
               <Button colorScheme="blue">Details</Button>
             </Flex>
+            </Link>
           ))}
         </Stack>
       

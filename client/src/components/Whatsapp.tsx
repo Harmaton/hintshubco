@@ -21,7 +21,7 @@ function Whatsapp() {
       color="white"
       position="fixed"
       bottom="5"
-      left="6"
+      right="6"
       zIndex="docked"
       onClick={handleWhatsappClick}
     />
