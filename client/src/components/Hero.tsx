@@ -25,23 +25,35 @@ import {
     
     
   } from '@chakra-ui/react';
-  import {useState} from 'react'
+  import {ChangeEvent, useState} from 'react'
   
 
+  type FormValues = {
+    fullname: string;
+    phone: string;
+    location: string;
+    deliveryRequest: string;
+  };
+
   export default function Hero() {
+    const [fullname, setFullname] = useState('');
+    const [phone, setPhone] = useState('');
+    const [location, setLocation] = useState('');
     const [deliveryRequest, setDeliveryRequest] = useState('');
-
+  
     const { isOpen, onOpen, onClose } = useDisclosure();
-
+  
     const handleSubmit = () => {
-      // Perform any necessary actions with the deliveryRequest value
+      // Perform any necessary actions with the form data
+      console.log('Full Name:', fullname);
+      console.log('Phone Number:', phone);
+      console.log('Location:', location);
       console.log('Delivery Request:', deliveryRequest);
-    
+  
       // Close the modal
       onClose();
     };
-    
-
+  
 
     return (
       <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
@@ -65,7 +77,7 @@ import {
             </Text>
             <br />{' '}
             <Text color={'blue.400'} as={'span'}>
-              We Deliver 🔥 
+              We Deliver ... 
             </Text>{' '}
           </Heading>
           <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
@@ -105,7 +117,7 @@ import {
           }
         />
       </Flex>
-          {/* Modal form */}
+      
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>
@@ -113,20 +125,42 @@ import {
         <ModalCloseButton />
         <ModalBody>
           <FormControl>
-            <FormLabel>Delivery Request</FormLabel>
+            <FormLabel htmlFor = "fullname">Full Name</FormLabel>
             <Input
               type="text"
-              value={deliveryRequest}
-              onChange={(e) => setDeliveryRequest(e.target.value)}
-              placeholder="Enter your delivery request"
+              id="fullname"
+              value={fullname}
+              onChange={(e) => setFullname(e.target.value)}
+              placeholder="Full Name"
             />
-            
+
+            <FormLabel htmlFor = "phone">Phone Number</FormLabel>
+            <Input
+              type="tel"
+              id="phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="Phone Number"
+            />
+
+            <FormLabel htmlFor = "location">Location</FormLabel>
             <Input
               type="text"
+              id="location"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+              placeholder="Location"
+            />
+
+            <FormLabel htmlFor = "deliveryRequest">Delivery Request</FormLabel>
+            <Input
+              type="text"  
+              id="deliveryRequest"
               value={deliveryRequest}
               onChange={(e) => setDeliveryRequest(e.target.value)}
-              placeholder="Enter your delivery request"
+              placeholder="Delivery Request"
             />
+
           </FormControl>
         </ModalBody>
         <ModalFooter>
@@ -137,8 +171,8 @@ import {
             Cancel
           </Button>
         </ModalFooter>
-        </ModalContent>
-      </Modal>
+      </ModalContent>
+    </Modal>
       
     </Stack>
     );
