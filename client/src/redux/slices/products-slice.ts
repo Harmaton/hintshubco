@@ -30,7 +30,7 @@ const initialState: Product[] = [
         id: "5f9a09e4-0942-11ee-be56-0242ac120002",
         name: "Architectural Design",
         price: 0,
-        image: "architectural-design.jpg",
+        image: "https://images.unsplash.com/photo-1551524164-687a55dd1126?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80",
         description:
           "Visualize Your Dream Home in Stunning 2D Plans and 3D Impressions",
       },
@@ -38,15 +38,15 @@ const initialState: Product[] = [
         id: "6a5c49aa-0942-11ee-be56-0242ac120002",
         name: "Building Construction",
         price: 0,
-        image: "building-construction.jpg",
+        image: "https://images.unsplash.com/photo-1621511075938-f03482369feb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
         description:
           "Transforming Your Dream Into a Solid Reality with Expert Builders",
       },
       {
         id: "705459d8-0942-11ee-be56-0242ac120002",
-        name: "Labor Contract",
+        name: "Labour Contract",
         price: 0,
-        image: "labor-contract.jpg",
+        image: "https://images.unsplash.com/photo-1669910462922-32b56f4998a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
         description:
           "Quality Materials, Skilled Experts, and Professional Execution - Your Project in Safe Hands",
       },
@@ -54,7 +54,7 @@ const initialState: Product[] = [
         id: "77476e4c-0942-11ee-be56-0242ac120002",
         name: "Structural Design",
         price: 0,
-        image: "structural-design.jpg",
+        image: "https://images.unsplash.com/photo-1581093196867-ca3dba3c721b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
         description:
           "Ensuring Safety and Cost-Efficiency in Your Construction Project with Expert Structural Engineers",
       },
@@ -62,7 +62,7 @@ const initialState: Product[] = [
         id: "7ef6791c-0942-11ee-be56-0242ac120002",
         name: "Interior Design",
         price: 0,
-        image: "interior-design.jpg",
+        image: "https://images.unsplash.com/photo-1556702571-3e11dd2b1a92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
         description:
           "Transforming Spaces Into Beautiful, Functional, and Personalized Homes",
       },
@@ -70,7 +70,7 @@ const initialState: Product[] = [
         id: "84548890-0942-11ee-be56-0242ac120002",
         name: "Costing and Estimation (BOQ)",
         price: 0,
-        image: "costing-and-estimation.jpg",
+        image: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1174&q=80",
         description:
           "Accurate Cost Estimation and Efficient Material Planning for Seamless Project Execution",
       },

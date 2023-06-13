@@ -36,7 +36,7 @@ const ProductList = () => {
                 overflow='hidden'
                 variant='filled'
                 maxW={"sm"}
-                mx="3"
+                m="3"
                 className='min-h-[150px]'
               >
                 <Box p={6}>
