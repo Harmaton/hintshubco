@@ -9,7 +9,7 @@ const ProductList = () => {
   const products = useAppSelector(state => state.products)
 
   return (
-    <Box>
+    <Box maxW={"7xl"} mx={"auto"}>
       <Heading mb={6}>Our Products</Heading>
       <Stack spacing={4}>
         {products.map((product) => (

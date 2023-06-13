@@ -11,9 +11,11 @@ import {
   Heading,
   SimpleGrid,
   StackDivider,
-  useColorModeValue, List,
+  useColorModeValue, 
+  List,
   ListItem,
-  Image
+  Image,
+  Spinner
 } from '@chakra-ui/react';
 import { MdLocalShipping } from 'react-icons/md';
   
@@ -31,8 +33,15 @@ import { MdLocalShipping } from 'react-icons/md';
 
   // Ensure that 'product' is defined before rendering
   if (!product) {
-    return <div>Loading...</div>; // or any other placeholder while the data is being fetched
+    <div className="flex items-center justify-center h-screen bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-gray-900 to-gray-600">
+    <div className="">  
+    <Heading size={"lg"} className="animate-bounce">
+            Loading...
+    </Heading>
+        <Spinner size='xl' /></div>  
+    </div>
   }
+
   const priceText = useColorModeValue('gray.900', 'gray.400')
   const buttonBg = useColorModeValue('gray.900', 'gray.50')
   const buttonColor = useColorModeValue('white', 'gray.900')
@@ -52,7 +61,7 @@ import { MdLocalShipping } from 'react-icons/md';
             <Image
               rounded={'md'}
               alt={'product image'}
-              src={`${product.image}`}
+              src={`${product!.image}`}
               fit={'cover'}
               align={'center'}
               w={'100%'}
@@ -65,16 +74,15 @@ import { MdLocalShipping } from 'react-icons/md';
                 lineHeight={1.1}
                 fontWeight={600}
                 fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
-                {`${product.name}`}
+                {`${product!.name}`}
               </Heading>
               <Text
                 color={priceText}
                 fontWeight={300}
                 fontSize={'2xl'}>
-                ${`${product.price}`}
+                ${`${product!.price}`}
               </Text>
             </Box>
-  
             <Stack
               spacing={{ base: 4, sm: 6 }}
               direction={'column'}

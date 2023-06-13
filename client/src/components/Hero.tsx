@@ -108,13 +108,14 @@ import {
           </Stack>
         </Stack>
       </Flex>
-      <Flex flex={1}>
+      <Flex flex={1} className='p-5'>
         <Image
           alt={'delivery Image'}
           objectFit={'cover'}
           src={
             '/hintshubbackdellist.jpeg'
           }
+          className=''
         />
       </Flex>
       
