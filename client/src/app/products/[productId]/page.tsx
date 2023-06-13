@@ -1,6 +1,7 @@
 "use client"
 
 import { useAppSelector } from '@/app/hooks/hooks';
+import { ArrowBackIcon } from '@chakra-ui/icons';
 import {
   Box, Container,
   Stack,
@@ -15,8 +16,10 @@ import {
   List,
   ListItem,
   Image,
-  Spinner
+  Spinner,
+  IconButton
 } from '@chakra-ui/react';
+import { useRouter } from 'next/navigation';
 import { MdLocalShipping } from 'react-icons/md';
   
 
@@ -30,14 +33,15 @@ import { MdLocalShipping } from 'react-icons/md';
 
   // Find the product with the matching ID
   const product = products.find((item) => item.id === productId);
+  const router = useRouter()
 
   // Ensure that 'product' is defined before rendering
   if (!product) {
-    <div className="flex items-center justify-center h-screen bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-gray-900 to-gray-600">
-    <div className="">  
-    <Heading size={"lg"} className="animate-bounce">
-            Loading...
-    </Heading>
+    <div className="min-h-screen bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-gray-900 to-gray-600">
+    <div className="flex justify-center items-center flex-col">  
+        <Heading size={"lg"} className="animate-bounce">
+                Loading...
+        </Heading>
         <Spinner size='xl' /></div>  
     </div>
   }
@@ -69,6 +73,7 @@ import { MdLocalShipping } from 'react-icons/md';
             />
           </Flex>
           <Stack spacing={{ base: 6, md: 10 }}>
+          <IconButton aria-label='Search database' variant={"outline"} className='w-8' icon={<ArrowBackIcon />}  onClick={()=> router.push("/")}/>
             <Box as={'header'}>
               <Heading
                 lineHeight={1.1}
