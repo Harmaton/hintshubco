@@ -15,20 +15,20 @@ import Support from '../components/Support'
 
 export default function Home() {
   return (
-    <>
-    <Nav />
-    <Hero />
-    <ProductList />
-    <Carousel />
-    <About />
-    <Statistics />
-    <FAQAccordion />
-    <Testimonials />
-    <Contact />
-    <Newsletter />
-    <Whatsapp />
-    <Support />
-    <Footer />
-    </>
+    <div className=''>
+      <Nav />
+      <Hero />
+      <ProductList />
+      <Carousel />
+      <About />
+      <Statistics />
+      <FAQAccordion />
+      <Testimonials />
+      <Contact />
+      <Newsletter />
+      <Whatsapp />
+      <Support />
+      <Footer />
+    </div>
   )
 }
