@@ -2,61 +2,62 @@
 "use client"
 
 import {
-    Button,
-    Flex,
-    Heading,
-    Image,
-    Stack,
-    Text,
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalCloseButton,
-    ModalBody,
-    ModalFooter,
-    FormControl,
-    FormLabel,
-    VStack,
-    Box,
-    Input,
-    useBreakpointValue,
-    useDisclosure
-    
-    
-  } from '@chakra-ui/react';
-  import {ChangeEvent, useState} from 'react'
-  
+  Button,
+  Flex,
+  Heading,
+  Image,
+  Stack,
+  Text,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
+  FormControl,
+  FormLabel,
+  VStack,
+  Box,
+  Input,
+  useBreakpointValue,
+  useDisclosure
 
-  type FormValues = {
-    fullname: string;
-    phone: string;
-    location: string;
-    deliveryRequest: string;
+
+} from '@chakra-ui/react';
+import { ChangeEvent, useState } from 'react'
+
+
+type FormValues = {
+  fullname: string;
+  phone: string;
+  location: string;
+  deliveryRequest: string;
+};
+
+export default function Hero() {
+  const [fullname, setFullname] = useState('');
+  const [phone, setPhone] = useState('');
+  const [location, setLocation] = useState('');
+  const [deliveryRequest, setDeliveryRequest] = useState('');
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen: trackOpen, onOpen: onTrackOpen, onClose: onTrackClose } = useDisclosure();
+
+  const handleSubmit = () => {
+    // Perform any necessary actions with the form data
+    console.log('Full Name:', fullname);
+    console.log('Phone Number:', phone);
+    console.log('Location:', location);
+    console.log('Delivery Request:', deliveryRequest);
+
+    // Close the modal
+    onClose();
   };
 
-  export default function Hero() {
-    const [fullname, setFullname] = useState('');
-    const [phone, setPhone] = useState('');
-    const [location, setLocation] = useState('');
-    const [deliveryRequest, setDeliveryRequest] = useState('');
-  
-    const { isOpen, onOpen, onClose } = useDisclosure();
-  
-    const handleSubmit = () => {
-      // Perform any necessary actions with the form data
-      console.log('Full Name:', fullname);
-      console.log('Phone Number:', phone);
-      console.log('Location:', location);
-      console.log('Delivery Request:', deliveryRequest);
-  
-      // Close the modal
-      onClose();
-    };
-  
 
-    return (
-      <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
+  return (
+    <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
       <Flex p={8} flex={1} align={'center'} justify={'center'}>
         <Stack spacing={6} w={'full'} maxW={'lg'}>
           <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
@@ -77,7 +78,7 @@ import {
             </Text>
             <br />{' '}
             <Text color={'blue.400'} as={'span'}>
-              We Deliver ... 
+              We Deliver ...
             </Text>{' '}
           </Heading>
           <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
@@ -93,17 +94,17 @@ import {
                 bg: 'blue.500',
               }}
               onClick={onOpen}
-              >
-             Schedule a Delivery
+            >
+              Schedule a Delivery
             </Button>
-            
+
             <Button rounded={'full'}
-             bg={'yellow.400'}
-             color={'white'}
-             _hover={{
-               bg: 'blue.100',
-             }}
-             onClick={onOpen}
+              bg={'yellow.400'}
+              color={'white'}
+              _hover={{
+                bg: 'blue.100',
+              }}
+              onClick={onOpen}
             >Track your Delivery</Button>
           </Stack>
         </Stack>
@@ -118,64 +119,63 @@ import {
           className=''
         />
       </Flex>
-      
-    <Modal isOpen={isOpen} onClose={onClose}>
-      <ModalOverlay />
-      <ModalContent>
-        <ModalHeader>Schedule a Delivery</ModalHeader>
-        <ModalCloseButton />
-        <ModalBody>
-          <FormControl>
-            <FormLabel htmlFor = "fullname">Full Name</FormLabel>
-            <Input
-              type="text"
-              id="fullname"
-              value={fullname}
-              onChange={(e) => setFullname(e.target.value)}
-              placeholder="Full Name"
-            />
 
-            <FormLabel htmlFor = "phone">Phone Number</FormLabel>
-            <Input
-              type="tel"
-              id="phone"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              placeholder="Phone Number"
-            />
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Schedule a Delivery</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <FormControl>
+              <FormLabel htmlFor="fullname">Full Name</FormLabel>
+              <Input
+                type="text"
+                id="fullname"
+                value={fullname}
+                onChange={(e) => setFullname(e.target.value)}
+                placeholder="Full Name"
+              />
 
-            <FormLabel htmlFor = "location">Location</FormLabel>
-            <Input
-              type="text"
-              id="location"
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
-              placeholder="Location"
-            />
+              <FormLabel htmlFor="phone">Phone Number</FormLabel>
+              <Input
+                type="tel"
+                id="phone"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="Phone Number"
+              />
 
-            <FormLabel htmlFor = "deliveryRequest">Delivery Request</FormLabel>
-            <Input
-              type="text"  
-              id="deliveryRequest"
-              value={deliveryRequest}
-              onChange={(e) => setDeliveryRequest(e.target.value)}
-              placeholder="Delivery Request"
-            />
+              <FormLabel htmlFor="location">Location</FormLabel>
+              <Input
+                type="text"
+                id="location"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                placeholder="Location"
+              />
 
-          </FormControl>
-        </ModalBody>
-        <ModalFooter>
-          <Button colorScheme="blue" mr={3} onClick={handleSubmit}>
-            Send
-          </Button>
-          <Button variant="ghost" onClick={onClose}>
-            Cancel
-          </Button>
-        </ModalFooter>
-      </ModalContent>
-    </Modal>
-      
+              <FormLabel htmlFor="deliveryRequest">Delivery Request</FormLabel>
+              <Input
+                type="text"
+                id="deliveryRequest"
+                value={deliveryRequest}
+                onChange={(e) => setDeliveryRequest(e.target.value)}
+                placeholder="Delivery Request"
+              />
+
+            </FormControl>
+          </ModalBody>
+          <ModalFooter>
+            <Button colorScheme="blue" mr={3} onClick={handleSubmit}>
+              Send
+            </Button>
+            <Button variant="ghost" onClick={onClose}>
+              Cancel
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+
     </Stack>
-    );
-  }
-  
+  );
+}
