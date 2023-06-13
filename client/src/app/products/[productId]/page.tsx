@@ -5,7 +5,6 @@ import {
   Box, Container,
   Stack,
   Text,
-  Image,
   Flex,
   VStack,
   Button,
@@ -13,17 +12,35 @@ import {
   SimpleGrid,
   StackDivider,
   useColorModeValue, List,
-  ListItem
+  ListItem,
+  Image
 } from '@chakra-ui/react';
 import { MdLocalShipping } from 'react-icons/md';
   
 
   type Props = {
-    id: string 
+    params: {productId: string }
   }
   
-  export default function Simple({id}: Props) {
-    const product = useAppSelector(state => state.products.find(prod => prod.id === id ))
+  export default function Simple({ params: {productId}}: Props) {
+  // Retrieve the 'products' array from the Redux store
+  const products = useAppSelector((state) => state.products);
+
+  // Find the product with the matching ID
+  const product = products.find((item) => item.id === productId);
+
+  // Ensure that 'product' is defined before rendering
+  if (!product) {
+    return <div>Loading...</div>; // or any other placeholder while the data is being fetched
+  }
+  const priceText = useColorModeValue('gray.900', 'gray.400')
+  const buttonBg = useColorModeValue('gray.900', 'gray.50')
+  const buttonColor = useColorModeValue('white', 'gray.900')
+  const productDetailsColor = useColorModeValue('yellow.500', 'yellow.300')
+  const featuresColor =  useColorModeValue('yellow.500', 'yellow.300')
+  const lorem2 = useColorModeValue('gray.500', 'gray.400')
+  const lorem1 = useColorModeValue('gray.200', 'gray.600')
+
     console.log("Prod", product)
     return (
       <Container maxW={'7xl'}>
@@ -35,9 +52,7 @@ import { MdLocalShipping } from 'react-icons/md';
             <Image
               rounded={'md'}
               alt={'product image'}
-              src={
-                'https://images.unsplash.com/photo-1596516109370-29001ec8ec36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyODE1MDl8MHwxfGFsbHx8fHx8fHx8fDE2Mzg5MzY2MzE&ixlib=rb-1.2.1&q=80&w=1080'
-              }
+              src={`${product.image}`}
               fit={'cover'}
               align={'center'}
               w={'100%'}
@@ -50,13 +65,13 @@ import { MdLocalShipping } from 'react-icons/md';
                 lineHeight={1.1}
                 fontWeight={600}
                 fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
-                name
+                {`${product.name}`}
               </Heading>
               <Text
-                color={useColorModeValue('gray.900', 'gray.400')}
+                color={priceText}
                 fontWeight={300}
                 fontSize={'2xl'}>
-                $350.00 USD
+                ${`${product.price}`}
               </Text>
             </Box>
   
@@ -65,12 +80,12 @@ import { MdLocalShipping } from 'react-icons/md';
               direction={'column'}
               divider={
                 <StackDivider
-                  borderColor={useColorModeValue('gray.200', 'gray.600')}
+                  borderColor={lorem1}
                 />
               }>
               <VStack spacing={{ base: 4, sm: 6 }}>
                 <Text
-                  color={useColorModeValue('gray.500', 'gray.400')}
+                  color={lorem2}
                   fontSize={'2xl'}
                   fontWeight={'300'}>
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -86,7 +101,7 @@ import { MdLocalShipping } from 'react-icons/md';
               <Box>
                 <Text
                   fontSize={{ base: '16px', lg: '18px' }}
-                  color={useColorModeValue('yellow.500', 'yellow.300')}
+                  color={featuresColor}
                   fontWeight={'500'}
                   textTransform={'uppercase'}
                   mb={'4'}>
@@ -109,7 +124,7 @@ import { MdLocalShipping } from 'react-icons/md';
               <Box>
                 <Text
                   fontSize={{ base: '16px', lg: '18px' }}
-                  color={useColorModeValue('yellow.500', 'yellow.300')}
+                  color={productDetailsColor}
                   fontWeight={'500'}
                   textTransform={'uppercase'}
                   mb={'4'}>
@@ -170,8 +185,8 @@ import { MdLocalShipping } from 'react-icons/md';
               mt={8}
               size={'lg'}
               py={'7'}
-              bg={useColorModeValue('gray.900', 'gray.50')}
-              color={useColorModeValue('white', 'gray.900')}
+              bg={buttonBg}
+              color={buttonColor}
               textTransform={'uppercase'}
               _hover={{
                 transform: 'translateY(2px)',

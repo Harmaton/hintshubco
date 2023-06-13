@@ -17,11 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+      <ChakraProvider>
         <Provider store={store}>
-        <ChakraProvider>
-        {children}
-      </ChakraProvider>
+        {children}  
         </Provider>
+        </ChakraProvider>
       </body>
     </html>
   )
