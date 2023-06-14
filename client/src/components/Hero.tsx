@@ -54,6 +54,9 @@ export default function Hero() {
     // Close the modal
     onClose();
   };
+  const handleTrackSubmit = () => {
+    onTrackClose()
+  }
 
 
   return (
@@ -65,25 +68,22 @@ export default function Hero() {
               as={'span'}
               position={'relative'}
               _after={{
-                content: "''",
                 width: 'full',
                 height: useBreakpointValue({ base: '20%', md: '30%' }),
                 position: 'absolute',
                 bottom: 1,
                 left: 0,
-                bg: 'blue.400',
                 zIndex: -1,
               }}>
-              Hints.Hub Companies,
+              HINTS HUB COMPANIES
             </Text>
             <br />{' '}
-            <Text color={'blue.400'} as={'span'}>
-              We Deliver ...
-            </Text>{' '}
           </Heading>
+          <Text color={'blue.400'} as={'span'} fontSize={"2xl"}>
+            We Deliver ...
+          </Text>{' '}
           <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
-            The project board is an exclusive resource for contract work. It's
-            perfect for freelancers, agencies, and moonlighters.
+            Turn your dreams into tangible projects with our comprehensive engineering services. Our team of experts specializes in architectural design, structural engineering, interior design, and more, ensuring the perfect blend of creativity, functionality, and quality. Experience the satisfaction of seeing your vision come to life!
           </Text>
           <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
             <Button
@@ -104,7 +104,7 @@ export default function Hero() {
               _hover={{
                 bg: 'blue.100',
               }}
-              onClick={onOpen}
+              onClick={onTrackOpen}
             >Track your Delivery</Button>
           </Stack>
         </Stack>
@@ -176,6 +176,42 @@ export default function Hero() {
         </ModalContent>
       </Modal>
 
+      <Modal isOpen={trackOpen} onClose={onTrackClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Track your Delivery</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <FormControl>
+              <FormLabel htmlFor="fullname">Order number</FormLabel>
+              <Input
+                type="text"
+                id="orderNumber"
+                value={fullname}
+                onChange={(e) => setFullname(e.target.value)}
+                placeholder="Order Number"
+              />
+
+              <FormLabel htmlFor="phone">Phone Number</FormLabel>
+              <Input
+                type="tel"
+                id="phone"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="Phone Number"
+              />
+            </FormControl>
+          </ModalBody>
+          <ModalFooter>
+            <Button colorScheme="blue" mr={3} onClick={handleTrackSubmit}>
+              Send
+            </Button>
+            <Button variant="ghost" onClick={onTrackClose}>
+              Cancel
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </Stack>
   );
 }
