@@ -81,7 +81,9 @@ function App() {
                                             : "md:translate-x-4 md:opacity-0"
                                     )}
                                 >
-                                    <p className="text-sm uppercase text-primary md:text-lg">
+                                    <p
+                                        className="text-sm uppercase text-primary md:text-lg"
+                                    >
                                         {person.name}
                                     </p>
                                     <p className="text-md font-semibold">{person.description}</p>
