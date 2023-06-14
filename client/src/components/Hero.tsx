@@ -97,7 +97,7 @@ export default function Hero() {
             >
               Schedule a Delivery
             </Button>
-
+            {/* 
             <Button rounded={'full'}
               bg={'yellow.400'}
               color={'white'}
@@ -105,7 +105,7 @@ export default function Hero() {
                 bg: 'blue.100',
               }}
               onClick={onTrackOpen}
-            >Track your Delivery</Button>
+            >Track your Delivery</Button> */}
           </Stack>
         </Stack>
       </Flex>
